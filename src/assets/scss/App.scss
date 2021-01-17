@@ -1,10 +1,50 @@
+@import '~antd/dist/antd.css';
+
 $bg-color: yellow;
 $border-color: red;
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul.horizontal {
+  margin: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 2em;
+
+    &:last-child { margin-right: 0 }
+  }
+}
+
 .app {
   font-family: helvetica, arial, sans-serif;
-  padding: 2em;
-  border: 5px solid $border-color;
+
+  .navbar {
+    background-color: #282828;
+    padding: .7em 2em;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+
+    & > * {
+      margin-right: 2em;
+
+      &:last-child { margin-right: 0}
+    }
+
+    .navigationWrapper {
+      flex-grow: 1;
+
+      li {
+        color: ghostwhite;
+      }
+    }
+  }
 
   p {
     background-color: $bg-color;
