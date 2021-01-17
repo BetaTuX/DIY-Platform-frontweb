@@ -31,6 +31,9 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [new HtmlWebpackPlugin({ template: "index.html.ejs" })],
   externals: {
     react: "React",
