@@ -14,7 +14,7 @@ class AppBar extends Component {
         let rows = [];
 
         for (let i = 0; i < searchOptions.length; i++) {
-            rows.push(<Option value={searchOptions[i]}>{searchOptions[i]}</Option>);
+            rows.push(<Option value={searchOptions[i]} key={i}>{searchOptions[i]}</Option>);
         }
         const searchelement = <Select defaultValue={searchOptions[0]}>{rows}</Select>;
 
