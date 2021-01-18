@@ -3,9 +3,9 @@ import {Component} from "react";
 import {Select, Skeleton} from "antd";
 import Search from "antd/es/input/Search";
 import Navigation from "./Navigation";
+import {AccountBarModule} from "./AccountBarModule";
 
 const {Option} = Select;
-
 
 class AppBar extends Component {
 
@@ -21,7 +21,7 @@ class AppBar extends Component {
         return (
             <nav className="navbar">
                 <div className="logo">
-                    <Skeleton avatar={{shape:"square", style: {padding:0}}} paragraph={{rows:0}} title={{width:150}}/>
+                    <Skeleton avatar={{shape:"square", style: {padding:0}}} paragraph={false} title={{width:150}}/>
                 </div>
                 <div className="searchBar">
                     <Search size="middle" addonBefore={searchelement} placeholder="Search"/>
@@ -30,7 +30,7 @@ class AppBar extends Component {
                     <Navigation/>
                 </div>
                 <div className="profileWrapper">
-                    <Skeleton paragraph={{rows:0}} title={{width:120}} avatar/>
+                    <AccountBarModule/>
                 </div>
             </nav>
         );

@@ -40,6 +40,7 @@ ul.horizontal {
 
     & > * {
       margin-right: 2em;
+      height: 100%;
 
       &:last-child {
         margin-right: 0
@@ -51,6 +52,22 @@ ul.horizontal {
 
       li {
         color: ghostwhite;
+      }
+    }
+
+    .profileWrapper {
+      .username-field {
+        margin-left: 16px;
+        margin-right: 8px;
+      }
+      .anticon, .username-field {
+        color: white;
+      }
+      .dropdown .anticon {
+        transition: all .25s ease-in-out;
+      }
+      .dropdown:hover .dropdown-icon {
+        transform: rotateZ(180deg);
       }
     }
   }
