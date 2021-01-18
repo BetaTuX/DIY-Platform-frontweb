@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Component} from "react";
 import {Button} from "antd";
-import axios, {AxiosRequestConfig} from "axios";
+import axios, {AxiosRequestConfig, AxiosResponse} from "axios";
 
 enum MethodType {
     GET = "GET",
@@ -26,10 +26,10 @@ class LoadingButton extends Component {
 
     props: {
         children: string;
-        successCallback?: () => void;
-        errorCallback?: () => void;
-        finalizeCallback?: () => void;
         callConfig: AxiosRequestConfig;
+        successCallback?: (res: AxiosResponse) => void;
+        errorCallback?: (e) => void;
+        finalizeCallback?: () => void;
     }
 
     public render() {
@@ -41,20 +41,19 @@ class LoadingButton extends Component {
     }
 
     private onBtnClick() {
-        console.log('custom btn click');
         if (!this.props.callConfig)
             return;
         this.setState({isLoading: true});
         axios(this.props.callConfig)
-            .then(() => {
+            .then((res) => {
                 this.setState({isLoading: false});
                 if (this.props.successCallback != undefined)
-                    this.props.successCallback();
+                    this.props.successCallback(res);
             })
-            .catch(() => {
+            .catch((e) => {
                 this.setState({isLoading: false});
                 if (this.props.errorCallback != undefined)
-                    this.props.errorCallback();
+                    this.props.errorCallback(e);
             })
             .finally(() => {
                 this.setState({isLoading: false});

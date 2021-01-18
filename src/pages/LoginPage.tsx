@@ -15,7 +15,7 @@ class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeTab: 'log',
+            activeTab: window.location.pathname.slice(1, 4),
         };
     }
 
@@ -30,11 +30,15 @@ class LoginPage extends Component {
                 <div className={"container"}>
                     <Card
                         className={'hide-link'}
-                        tabList={[{tab: <Link to={"/login"}>Login</Link>, key: 'log'}, {tab: <Link to={"/register"}>Register</Link>, key: 'reg'}]}
+                        defaultActiveTabKey={this.state.activeTab}
+                        tabList={[{tab: <Link to={"/login"}>Login</Link>, key: 'log'}, {
+                            tab: <Link to={"/register"}>Register</Link>, key: 'reg'
+                        }]}
                         onTabChange={key => {
                             this.setState({activeTab: key});
                         }}
-                        tabProps={{centered: true, size: "large"}}>
+                        tabProps={{centered: true, size: "large"}}
+                    >
                         {content[this.state.activeTab]}
                     </Card>
                 </div>

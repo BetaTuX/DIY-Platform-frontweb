@@ -27,13 +27,15 @@ class App extends React.Component {
                                 <Switch>
                                     <Route exact path={"/"}>
                                         <LoadingButton
-                                            successCallback={() => {
-                                                console.log("success")
+                                            successCallback={(res) => {
+                                                console.log(res);
+                                            }}
+                                            errorCallback={(e) => {
+                                                console.log(e);
                                             }}
                                             callConfig={{
                                                 method: "get",
-                                                url: "http://google.com",
-                                                headers: ['Access-Control-Allow-Origin']
+                                                url: "https://api.agify.io/?name=bella"
                                             }}>
                                             Custom button
                                         </LoadingButton>
