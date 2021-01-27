@@ -60,14 +60,34 @@ ul.horizontal {
         margin-left: 16px;
         margin-right: 8px;
       }
+
       .anticon, .username-field {
         color: white;
       }
+
       .dropdown .anticon {
         transition: all .25s ease-in-out;
       }
+
       .dropdown:hover .dropdown-icon {
         transform: rotateZ(180deg);
+      }
+
+      .register-btn,
+      .login-btn {
+        color: white;
+
+        &:hover {
+          color: unset;
+        }
+      }
+
+      & > a {
+        margin-right: 16px;
+
+        &:last-child {
+          margin-right: unset;
+        }
       }
     }
   }
@@ -97,9 +117,9 @@ ul.horizontal {
       width: 620px;
     }
 
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   }
 }
 
